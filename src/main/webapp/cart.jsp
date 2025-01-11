@@ -1,8 +1,7 @@
-<%@page import="com.yash.dao.CartDAOImpl"%>
+<%@page import="com.yash.daoImpl.CartDAOImpl"%>
 <%@page import="com.yash.entity.User"%>
 <%@page import="com.yash.entity.Cart"%>
 <%@page import="java.util.List"%>
-<%@page import="com.yash.db.DBConnect"%>
 <%@page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -271,7 +270,7 @@
     }
 
     // Fetch user's cart items
-    CartDAOImpl dao = new CartDAOImpl(DBConnect.getConn2());
+    CartDAOImpl dao = new CartDAOImpl();
     List<Cart> cartItems = dao.getItembyUser(user.getId());
     double totalPrice = 0.00;
 %>

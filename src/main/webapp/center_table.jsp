@@ -1,8 +1,7 @@
 <%@page import="com.yash.entity.User"%>
 <%@page import="com.yash.entity.ItemDetails"%>
 <%@page import="java.util.List"%>
-<%@page import="com.yash.db.DBConnect"%>
-<%@page import="com.yash.dao.ItemDAOImpl"%>
+<%@page import="com.yash.daoImpl.ItemDAOImpl"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 
 
@@ -218,7 +217,7 @@ User u = (User) session.getAttribute("userobj");
    <div class="row">
       <!-- Product List -->
       <%
-      ItemDAOImpl dao = new ItemDAOImpl(DBConnect.getConn2());
+      ItemDAOImpl dao = new ItemDAOImpl();
       List<ItemDetails> list = dao.getCenterTableItem();
       for (ItemDetails b : list) {
       %>

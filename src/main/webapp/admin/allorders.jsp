@@ -1,11 +1,9 @@
-<%@page import="com.yash.db.DBConnect"%>
-<%@page import="com.yash.dao.ItemOrderDAOImpl"%>
+<%@page import="com.yash.daoImpl.ItemOrderDAOImpl"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 
 
 <%@page import="com.yash.entity.ItemOrder"%>
-<%@page import="com.yash.dao.ItemOrderDAOImpl"%>
-<%@page import="com.yash.dao.CartDAOImpl"%>
+<%@page import="com.yash.daoImpl.CartDAOImpl"%>
 <%@page import="com.yash.entity.User"%>
 <%@page import="java.util.*,java.sql.*"%>
 <%@page import="com.yash.entity.Cart"%>
@@ -14,7 +12,7 @@
 <%@page import="com.yash.entity.ItemDetails"%>
 <%@page import="java.util.List"%>
 <%@page import="com.yash.db.DBConnect"%>
-<%@page import="com.yash.dao.ItemDAOImpl"%>
+<%@page import="com.yash.daoImpl.ItemDAOImpl"%>
 
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -211,7 +209,7 @@
         </thead>
         <tbody>
             <%
-                ItemOrderDAOImpl dao = new ItemOrderDAOImpl(DBConnect.getConn2());
+                ItemOrderDAOImpl dao = new ItemOrderDAOImpl();
                 List<ItemOrder> ordersList = dao.getItems();
                 for (ItemOrder order : ordersList) {
             %>

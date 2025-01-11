@@ -1,8 +1,7 @@
 <%@page import="com.yash.entity.User"%>
 <%@page import="com.yash.entity.ItemDetails"%>
 <%@page import="java.util.List"%>
-<%@page import="com.yash.db.DBConnect"%>
-<%@page import="com.yash.dao.ItemDAOImpl"%>
+<%@page import="com.yash.daoImpl.ItemDAOImpl"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -163,7 +162,7 @@ to {
 			<!-- Product 1 -->
 
 			<%
-			ItemDAOImpl dao = new ItemDAOImpl(DBConnect.getConn2());
+			ItemDAOImpl dao = new ItemDAOImpl();
 			List<ItemDetails> list = dao.getSofaSetItem();
 			for (ItemDetails b : list) {
 			%>

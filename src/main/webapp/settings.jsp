@@ -1,14 +1,13 @@
 <%@page import="com.yash.entity.ItemOrder"%>
-<%@page import="com.yash.dao.ItemOrderDAOImpl"%>
-<%@page import="com.yash.dao.CartDAOImpl"%>
+<%@page import="com.yash.daoImpl.ItemOrderDAOImpl"%>
+<%@page import="com.yash.daoImpl.CartDAOImpl"%>
 <%@page import="com.yash.entity.User"%>
 <%@page import="java.util.*,java.sql.*"%>
 <%@page import="com.yash.entity.Cart"%>
 
 <%@page import="com.yash.entity.ItemDetails"%>
 <%@page import="java.util.List"%>
-<%@page import="com.yash.db.DBConnect"%>
-<%@page import="com.yash.dao.ItemDAOImpl"%>
+<%@page import="com.yash.daoImpl.ItemDAOImpl"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
@@ -119,7 +118,7 @@ gin-right: 20px ; tran
 
 				<%
 			//	User u2 =(User)session.getAttribute("userobj");
-				ItemOrderDAOImpl dao = new ItemOrderDAOImpl(DBConnect.getConn2());
+				ItemOrderDAOImpl dao = new ItemOrderDAOImpl();
 				List<ItemOrder> blist = dao.getItem(u.getPhoneno());
 				for(ItemOrder b:blist){
 					%>

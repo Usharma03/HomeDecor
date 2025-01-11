@@ -2,7 +2,7 @@
 <%@page import="com.yash.entity.ItemDetails"%>
 <%@page import="java.util.List"%>
 <%@page import="com.yash.db.DBConnect"%>
-<%@page import="com.yash.dao.ItemDAOImpl"%>
+<%@page import="com.yash.daoImpl.ItemDAOImpl"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
    pageEncoding="ISO-8859-1"%>
 

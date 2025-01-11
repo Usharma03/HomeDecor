@@ -26,6 +26,7 @@ public class OrderServlet extends HttpServlet {
 
     public OrderServlet() {
         this.cartService=new CartService();
+        this.orderSaveService=new OrderSaveService();
     }
 
     @Override

@@ -1,8 +1,7 @@
 <%@page import="com.yash.entity.User"%>
 <%@page import="com.yash.entity.ItemDetails"%>
 <%@page import="java.util.List"%>
-<%@page import="com.yash.db.DBConnect"%>
-<%@page import="com.yash.dao.ItemDAOImpl"%>
+<%@page import="com.yash.daoImpl.ItemDAOImpl"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page isELIgnored="false"%>
@@ -210,7 +209,7 @@
       <h1 class="text-center my-4">Photo Frames Collection</h1>
       <div class="row">
          <%
-         ItemDAOImpl dao = new ItemDAOImpl(DBConnect.getConn2());
+         ItemDAOImpl dao = new ItemDAOImpl();
          List<ItemDetails> list = dao.getPItem();
          for (ItemDetails b : list) {
          %>
